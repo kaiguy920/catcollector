@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Delete Cat</h1>
+
+<h5>Are you sure you want to delete {{ cat.name }}?</h5>
+<br />
+<form action="" method="post">
+    {% csrf_token %}
+    <input class="btn red lighten-2" type="submit" value="Yes, delete.">
+</form>
+{% endblock %}

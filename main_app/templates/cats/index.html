@@ -1,0 +1,22 @@
+<!-- templates/cats/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h3>Cat List</h3>
+<hr />
+<div class="container row center-align">
+    {% for cat in cats %}
+    <div class="card-panel teal lighten-2 col s6">
+        <a href="/cats/{{cat.id}}" class="white-text">
+            <h3>{{ cat.name }}</h3>
+            <h6>{{cat.breed}}</h6>
+        </a>
+        <a href="/user/{{cat.user.username}}" class="white-text">
+            <small>Adopted By: {{cat.user.username }}</small>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
